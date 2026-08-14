@@ -1,0 +1,39 @@
+name: Technical Task
+description: Tareas relacionadas con arquitectura, calidad o configuración
+title: "[FAR-"
+labels: [technical, architecture, triaged]
+body:
+  - type: markdown
+    attributes:
+      placeholder: "Describe la tarea técnica..."
+  - type: dropdown
+    id: componente
+    attributes:
+      label: "Componente afectado"
+      options:
+        - "Capa domain (entidades/servicios)"
+        - "Capa application (casos de uso)"
+        - "Adapter capa (repositorios/DB)"
+        - "Configuración Spring Boot"
+        - "Validación de negocio (medicamentos)"
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: "Decisión técnica requerida"
+      placeholder: "Ej: Evaluar contenedorización completa con Docker Compose"
+  - type: input
+    id: estimacion
+    attributes:
+      label: "Estimación de horas"
+      placeholder: "Ej: 3-5 horas"
+  - type: checkboxes
+    id: allowed
+    attributes:
+      label: "Producto permitido según normativa"
+      description: "Verifica que cumpla restricción de venta por internet"
+      options:
+        - label: "No afecta venta de medicamentos (solo cuidado personal/no medicamento)"
+          required: true
+          value: "yes"
